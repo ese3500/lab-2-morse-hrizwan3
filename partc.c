@@ -184,24 +184,7 @@ char checkSymbol() {
 int main() {
 	Init();	
 	while(1) {
-//		sprintf(String, "Hello world! \n");
-//		UART_putstring(String);
-//		_delay_ms(1000);
-		
-//		sprintf(String, "The year is %u\n", 2020);
-//		UART_putstring(String);
-//		_delay_ms(1000);
-//
-//	sprintf(String, "Hi %u\n", output);
 
-	//sprintf(String, "ISROVF: %u\n", checkIfOverFlowISRWorks);
-	//UART_putstring(String);
-	
-//	sprintf(String, "ISR IP CAPT: %u\n", checkIfInputCaptISRWorks);
-//	UART_putstring(String);
-	
-//	sprintf(String, "time1, time2: %u, %u \n", time1, time2);
-//	UART_putstring(String);
 
 
 	if (shouldPrint == 1) {
@@ -259,26 +242,6 @@ int main() {
 			nextSpot++;
 			hardCodeSpace = 0;
 		} 
-		else if (output == 3) {
-//			sprintf(String, "Space\n");
-//			UART_putstring(String);
-			PORTB ^= (1 << PORTB2);
-			_delay_ms(500);
-			PORTB ^= (1 << PORTB2);
-			symbols[nextSpot] = ' ';
-			
-			char c = checkSymbol();
-			sprintf(String, "%c\n", c);
-			UART_putstring(String);
-			
-			int i = 0;
-			while (i < 5) {
-				symbols[i] = 'g';
-				i++;
-			}
-			nextSpot = 0;
-			hardCodeSpace = 0;
-		}
 	}
 	else if (overflowCount > 99 && hardCodeSpace == 0) {
 //			sprintf(String, "Space\n");
